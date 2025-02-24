@@ -22,7 +22,7 @@ namespace Chat_Program
         private void SignUp_Load(object sender, EventArgs e)
         {
             //화면 로드시 파이어 베이스 연결
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"chatting-9551e-firebase-adminsdk-fbsvc-520ac91080.json";
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"chatting-9551e-firebase-adminsdk-fbsvc-0706a4bc04.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
             db = FirestoreDb.Create("chatting-9551e");
         }

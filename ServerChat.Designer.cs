@@ -31,11 +31,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_Server = new System.Windows.Forms.Label();
             this.listView_User = new System.Windows.Forms.ListView();
-            this.listView_messages = new System.Windows.Forms.ListView();
             this.button_Start = new System.Windows.Forms.Button();
             this.button_Stop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,15 +69,6 @@
             this.listView_User.TabIndex = 3;
             this.listView_User.UseCompatibleStateImageBehavior = false;
             // 
-            // listView_messages
-            // 
-            this.listView_messages.HideSelection = false;
-            this.listView_messages.Location = new System.Drawing.Point(196, 112);
-            this.listView_messages.Name = "listView_messages";
-            this.listView_messages.Size = new System.Drawing.Size(589, 326);
-            this.listView_messages.TabIndex = 4;
-            this.listView_messages.UseCompatibleStateImageBehavior = false;
-            // 
             // button_Start
             // 
             this.button_Start.BackColor = System.Drawing.Color.White;
@@ -89,6 +80,7 @@
             this.button_Start.TabIndex = 5;
             this.button_Start.Text = "채팅 시작";
             this.button_Start.UseVisualStyleBackColor = false;
+            this.button_Start.Click += new System.EventHandler(this.button_Start_Click);
             // 
             // button_Stop
             // 
@@ -126,16 +118,25 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "메세지";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(205, 112);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(568, 319);
+            this.listBox1.TabIndex = 13;
+            // 
             // ServerChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_Stop);
             this.Controls.Add(this.button_Start);
-            this.Controls.Add(this.listView_messages);
             this.Controls.Add(this.listView_User);
             this.Controls.Add(this.label_Server);
             this.Controls.Add(this.pictureBox1);
@@ -152,10 +153,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_Server;
         private System.Windows.Forms.ListView listView_User;
-        private System.Windows.Forms.ListView listView_messages;
         private System.Windows.Forms.Button button_Start;
         private System.Windows.Forms.Button button_Stop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
