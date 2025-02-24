@@ -26,7 +26,12 @@ namespace Chat_Program
 
         public string user_id { get; set; } = string.Empty;
         public string message { get; set; } = string.Empty;
-
-        public string ToJsonString => JsonSerializer.Serialize(this);
+        public string ToJsonString
+        {
+            get
+            {
+                return JsonSerializer.Serialize(new { user_id, message });
+            }
+        }
     }
 }

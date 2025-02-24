@@ -30,12 +30,12 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_Server = new System.Windows.Forms.Label();
-            this.listView_User = new System.Windows.Forms.ListView();
             this.button_Start = new System.Windows.Forms.Button();
             this.button_Stop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,23 +60,14 @@
             this.label_Server.TabIndex = 2;
             this.label_Server.Text = "Server_관리자";
             // 
-            // listView_User
-            // 
-            this.listView_User.HideSelection = false;
-            this.listView_User.Location = new System.Drawing.Point(12, 112);
-            this.listView_User.Name = "listView_User";
-            this.listView_User.Size = new System.Drawing.Size(162, 326);
-            this.listView_User.TabIndex = 3;
-            this.listView_User.UseCompatibleStateImageBehavior = false;
-            // 
             // button_Start
             // 
             this.button_Start.BackColor = System.Drawing.Color.White;
             this.button_Start.Font = new System.Drawing.Font("Noto Sans KR", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_Start.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.button_Start.Location = new System.Drawing.Point(535, 22);
+            this.button_Start.Location = new System.Drawing.Point(535, 12);
             this.button_Start.Name = "button_Start";
-            this.button_Start.Size = new System.Drawing.Size(114, 34);
+            this.button_Start.Size = new System.Drawing.Size(114, 44);
             this.button_Start.TabIndex = 5;
             this.button_Start.Text = "채팅 시작";
             this.button_Start.UseVisualStyleBackColor = false;
@@ -87,12 +78,13 @@
             this.button_Stop.BackColor = System.Drawing.Color.White;
             this.button_Stop.Font = new System.Drawing.Font("Noto Sans KR", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_Stop.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.button_Stop.Location = new System.Drawing.Point(671, 22);
+            this.button_Stop.Location = new System.Drawing.Point(671, 12);
             this.button_Stop.Name = "button_Stop";
-            this.button_Stop.Size = new System.Drawing.Size(114, 34);
+            this.button_Stop.Size = new System.Drawing.Size(114, 44);
             this.button_Stop.TabIndex = 6;
             this.button_Stop.Text = "채팅 종료";
             this.button_Stop.UseVisualStyleBackColor = false;
+            this.button_Stop.Click += new System.EventHandler(this.button_Stop_Click);
             // 
             // label1
             // 
@@ -127,17 +119,26 @@
             this.listBox1.Size = new System.Drawing.Size(568, 319);
             this.listBox1.TabIndex = 13;
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 15;
+            this.listBox2.Location = new System.Drawing.Point(18, 110);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(169, 319);
+            this.listBox2.TabIndex = 14;
+            // 
             // ServerChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_Stop);
             this.Controls.Add(this.button_Start);
-            this.Controls.Add(this.listView_User);
             this.Controls.Add(this.label_Server);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -152,11 +153,11 @@
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_Server;
-        private System.Windows.Forms.ListView listView_User;
         private System.Windows.Forms.Button button_Start;
         private System.Windows.Forms.Button button_Stop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
