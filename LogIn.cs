@@ -20,7 +20,7 @@ namespace Chat_Program
         {
             InitializeComponent();
             this.KeyPreview = true; //키 입력 감지
-            this.KeyDown += LogIn_KeyDown;
+            this.KeyDown += LogInKeyDown;
 
         }
         private void login_Load(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Chat_Program
         {
             LogInChat();
         }
-        private void LogIn_KeyDown(object sender, KeyEventArgs e) //엔터키 감지
+        private void LogInKeyDown(object sender, KeyEventArgs e) //엔터키 감지
         {
             if (e.KeyCode == Keys.Enter)
             {

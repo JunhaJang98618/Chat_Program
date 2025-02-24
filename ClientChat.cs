@@ -21,11 +21,15 @@ namespace Chat_Program
             InitializeComponent();
             _user_id = id;
             label_id.Text = _user_id;
+
+            this.KeyPreview = true; //키 입력 감지
+            this.KeyDown += logInKeyDown;
         }
         private TcpClient client;
 
         private async void button_Start_Click(object sender, EventArgs e)
         {
+            button_Start.Enabled = false;
             client = new TcpClient();
             await client.ConnectAsync(IPAddress.Parse("127.0.0.1"), 8080);
 
@@ -43,27 +47,16 @@ namespace Chat_Program
             await stream.WriteAsync(length_buffer, 0, length_buffer.Length);
             await stream.WriteAsync(msg_buffer, 0, msg_buffer.Length);
 
-            _ = handleClient(client);
+            _ = HandleClient(client);
         }
 
         private void button_send_Click(object sender, EventArgs e)
         {
-            NetworkStream stream = client.GetStream();
-            ChatHub hub = new ChatHub()
-            {
-                user_id = _user_id,
-                message = textBox1.Text,
-
-            };
-            var msg_buffer = Encoding.Default.GetBytes(hub.ToJsonString);
-            var length_buffer = BitConverter.GetBytes(msg_buffer.Length);
-
-            stream.Write(length_buffer, 0, length_buffer.Length);
-            stream.Write(msg_buffer, 0, msg_buffer.Length);
+            SendChat();
 
         }
 
-        private async Task handleClient(TcpClient client) //클라이언트와 통신
+        private async Task HandleClient(TcpClient client) //클라이언트와 통신
         {
 
             NetworkStream stream = client.GetStream(); //클라이언트와 데이터 공유
@@ -84,6 +77,38 @@ namespace Chat_Program
                 listBox_msg.Items.Add(msg); //리스트박스에 추가
 
             }
+        }
+
+        private void button_Stop_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
+
+        private void logInKeyDown(object sender, KeyEventArgs e) //엔터키 감지
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendChat();
+            }
+        }
+
+        private void SendChat()
+        {
+            NetworkStream stream = client.GetStream();
+            ChatHub hub = new ChatHub()
+            {
+                user_id = _user_id,
+                message = textBox1.Text,
+
+            };
+            var msg_buffer = Encoding.Default.GetBytes(hub.ToJsonString);
+            var length_buffer = BitConverter.GetBytes(msg_buffer.Length);
+
+            stream.Write(length_buffer, 0, length_buffer.Length);
+            stream.Write(msg_buffer, 0, msg_buffer.Length);
+
+            textBox1.Text = "";
+
         }
     }
 }

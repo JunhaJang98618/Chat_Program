@@ -36,9 +36,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label_id = new System.Windows.Forms.Label();
             this.button_send = new System.Windows.Forms.Button();
-            this.listView_User = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.listBox_msg = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,21 +46,22 @@
             this.button_Stop.BackColor = System.Drawing.Color.White;
             this.button_Stop.Font = new System.Drawing.Font("Noto Sans KR", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_Stop.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button_Stop.Location = new System.Drawing.Point(669, 20);
+            this.button_Stop.Location = new System.Drawing.Point(669, 12);
             this.button_Stop.Name = "button_Stop";
-            this.button_Stop.Size = new System.Drawing.Size(114, 34);
+            this.button_Stop.Size = new System.Drawing.Size(114, 42);
             this.button_Stop.TabIndex = 10;
             this.button_Stop.Text = "채팅 종료";
             this.button_Stop.UseVisualStyleBackColor = false;
+            this.button_Stop.Click += new System.EventHandler(this.button_Stop_Click);
             // 
             // button_Start
             // 
             this.button_Start.BackColor = System.Drawing.Color.White;
             this.button_Start.Font = new System.Drawing.Font("Noto Sans KR", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_Start.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button_Start.Location = new System.Drawing.Point(533, 20);
+            this.button_Start.Location = new System.Drawing.Point(533, 12);
             this.button_Start.Name = "button_Start";
-            this.button_Start.Size = new System.Drawing.Size(114, 34);
+            this.button_Start.Size = new System.Drawing.Size(114, 42);
             this.button_Start.TabIndex = 9;
             this.button_Start.Text = "채팅 시작";
             this.button_Start.UseVisualStyleBackColor = false;
@@ -106,18 +105,18 @@
             this.textBox1.Font = new System.Drawing.Font("Noto Sans KR Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox1.Location = new System.Drawing.Point(81, 73);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(444, 34);
+            this.textBox1.Size = new System.Drawing.Size(609, 34);
             this.textBox1.TabIndex = 13;
             // 
             // label_id
             // 
             this.label_id.AutoSize = true;
             this.label_id.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label_id.Font = new System.Drawing.Font("Noto Sans KR", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_id.Font = new System.Drawing.Font("Noto Sans KR", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label_id.ForeColor = System.Drawing.Color.Silver;
-            this.label_id.Location = new System.Drawing.Point(329, 24);
+            this.label_id.Location = new System.Drawing.Point(320, 9);
             this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(75, 26);
+            this.label_id.Size = new System.Drawing.Size(112, 39);
             this.label_id.TabIndex = 14;
             this.label_id.Text = "User ID";
             // 
@@ -126,22 +125,13 @@
             this.button_send.BackColor = System.Drawing.Color.White;
             this.button_send.Font = new System.Drawing.Font("Noto Sans KR", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_send.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button_send.Location = new System.Drawing.Point(531, 72);
+            this.button_send.Location = new System.Drawing.Point(707, 69);
             this.button_send.Name = "button_send";
-            this.button_send.Size = new System.Drawing.Size(76, 34);
+            this.button_send.Size = new System.Drawing.Size(76, 38);
             this.button_send.TabIndex = 15;
             this.button_send.Text = "전송";
             this.button_send.UseVisualStyleBackColor = false;
             this.button_send.Click += new System.EventHandler(this.button_send_Click);
-            // 
-            // listView_User
-            // 
-            this.listView_User.HideSelection = false;
-            this.listView_User.Location = new System.Drawing.Point(621, 113);
-            this.listView_User.Name = "listView_User";
-            this.listView_User.Size = new System.Drawing.Size(162, 326);
-            this.listView_User.TabIndex = 16;
-            this.listView_User.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
@@ -154,25 +144,13 @@
             this.label1.Size = new System.Drawing.Size(0, 26);
             this.label1.TabIndex = 17;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.Font = new System.Drawing.Font("Noto Sans KR", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(625, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 26);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "참여자";
-            // 
             // listBox_msg
             // 
             this.listBox_msg.FormattingEnabled = true;
             this.listBox_msg.ItemHeight = 15;
             this.listBox_msg.Location = new System.Drawing.Point(16, 113);
             this.listBox_msg.Name = "listBox_msg";
-            this.listBox_msg.Size = new System.Drawing.Size(591, 319);
+            this.listBox_msg.Size = new System.Drawing.Size(767, 319);
             this.listBox_msg.TabIndex = 19;
             // 
             // ClientChat
@@ -181,9 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 450);
             this.Controls.Add(this.listBox_msg);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView_User);
             this.Controls.Add(this.button_send);
             this.Controls.Add(this.label_id);
             this.Controls.Add(this.textBox1);
@@ -210,9 +186,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label_id;
         private System.Windows.Forms.Button button_send;
-        private System.Windows.Forms.ListView listView_User;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox_msg;
     }
 }
